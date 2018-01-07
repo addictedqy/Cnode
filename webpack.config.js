@@ -36,7 +36,7 @@ module.exports = {
         ],
       },
       {
-        test: '/\.(svg|jpg|git|png)$/',
+        test: /\.(svg|jpg|git|png)$/,
         loader: 'url-loader',
       }
     ]
