@@ -1,1 +1,198 @@
-@
+.header{
+  // 侧边栏
+  .sidebar__wrapper {
+    height: 100vh;
+    width: 62vw;
+    text-align: center;
+    z-index: 1000;
+    transition: all .75s;
+    position: fixed;
+    display: none;
+    z-index: 999;
+  }
+  .sidebar__close {
+    background-color: #354851;
+    padding: 6px 0;
+    display: flex;
+    font-size: 33px;
+    padding: 4.5px 0;
+    width: 100%;
+    -webkit-box-pack: center;
+    justify-content: center;
+    height: 52px;
+    span {
+      color: #fff;
+      font-weight: bold;
+      font-size: 24px;
+      padding: 5px;
+    }
+  }
+  .nav__warpper {
+    padding-top: 20px;
+    .sidebar__item--active {
+      color: #2086d7;
+    }
+    a {
+      padding: 10px 0;
+      line-height: 2em;
+      border-bottom: 1px solid #dedede;
+      display: block;
+      width: 100%;
+      text-decoration: none;
+      color: 2b3a42;
+    }
+  }
+}
+
+// 移动端 header 样式
+header {
+  .navigation__wrapper {
+    background-color: #2b3a42;
+  }
+  .navigation__header {
+    display: flex;
+    .icon-menu {
+      padding: 15px;
+      font-size: 21px;
+      color: #fff;
+      display: inline-block;
+      cursor: pointer;
+      position: absolute;
+    }
+    .logo__warapper img {
+      height: 100%;
+      width: auto;
+      padding: 10px 0;
+    }
+    .navigation__item {
+      display: none;
+    }
+  }
+  .logo__warapper {
+    margin: 0 auto;
+    height: 52px;
+  }
+}
+
+// 主题列表 topic 样式
+.content {
+  width: 100%;
+  max-width: 1024px;
+  margin: 0 auto;
+  .topicList__wrapper {
+    padding: 20px 10px 0 10px;
+    background-color: #354851;
+  }
+  .topic__warpper {
+    display: flex;
+    background-color: #fff;
+    padding: 10px 15px;
+    border-radius: 2px;
+    margin-bottom: 10px;
+  }
+  .topic__warpper:last-child {
+    margin-bottom: 0;
+  }
+  .topic__avater {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    margin-right: 20px;
+    -webkit-box-pack: center;
+  }
+  .topic__avater img {
+    max-width: 45px;
+    border-radius: 50%;
+  }
+  .topic__content {
+    flex: auto;
+    .topic__author {
+      display: flex;
+      justify-content: space-between;
+    }
+    .topic__label {
+      display: inline-block;
+      color: #fff;
+      background-color: #8dd6f9;
+      padding: 2px 10px;
+      border-radius: 2px;
+    }
+    span {
+      color: #999;
+    }
+    .topic__title {
+      margin: 5px 0;
+    }
+  }
+  .topic__bottom {
+    display: flex;
+    font-size: 13px;
+    color: #999;
+    justify-content: space-between;
+    .topic__info span {
+      margin-right: 30px;
+    }
+  }
+  .pagination__warpper {
+    color: #999;
+    background-color: #354851;
+  }
+  .pagination__warpper ul {
+    padding: 15px 10px;
+    margin: 0;
+    display: flex;
+  }
+  .pagination__warpper ul li {
+    flex: auto;
+    text-align: center;
+  }
+  .pagination__warpper ul li a {
+    color: #999;
+  }
+  i {
+    font-size: 14px;
+    margin: 5px;
+  }
+}
+
+
+
+// 屏幕宽度超过 768px 显示 PC 端布局
+@media screen and (min-width: 768px) {
+  .sidebar__wrapper {
+    display: none;
+  }
+  .navigation__wrapper {
+    background-color: #354851;
+    .navigation__header {
+      display: flex;
+      justify-content: space-between;
+    }
+    .logo__warapper {
+      height: 52px;
+      margin: 0;
+    }
+    .logo__warapper img {
+      width: auto;
+      height: 100%;
+      padding: 10px 0;
+    }
+    .navigation__header .icon-menu {
+      display: none;
+    }
+    .navigation__header .navigation__item {
+      display: flex;
+      justify-content: flex-end;
+    }
+    .navigation__item a {
+      padding: 16px 20px;
+      color: #999;
+      font-size: 16px;
+      display: inline-block;
+    }
+    .navgation__items--active {
+      color: #ccc;
+      background-color: #3f5561;
+    }
+  }
+}
