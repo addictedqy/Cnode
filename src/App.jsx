@@ -5,7 +5,8 @@ import { Provider } from 'react-redux';
 import { HashRouter, Switch, Route, Redirect } from 'react-router-dom';
 
 // views
-import Header from './components/Common/Header.jsx';
+import Home from './components/Home/Home.jsx';
+import Content from './components/Content/Content.jsx';
 
 // 管理数据流 store
 import store from './redux/configStore';
@@ -19,14 +20,20 @@ require('./styles/App.scss');
 class App extends React.Component {
   render() {
     return (
-      <div>
-        <Header />
-      </div>
+      <HashRouter>
+        <Switch>
+          <Route exact path="/" component={Home} />
+          <Route path="/content" component={Content} />
+          <Redirect to="/404" />
+        </Switch>
+      </HashRouter>
     )
   }
 }
 
 ReactDom.render (
-    <App />,
-    root
+  <Provider store={store}>
+    <App />
+  </Provider>,
+  root
 )

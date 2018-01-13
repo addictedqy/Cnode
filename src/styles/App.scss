@@ -1,4 +1,6 @@
 @import './base.scss';
 @import './layout.scss';
 
-@import '../components/Common/Header.scss';
+@import '../components/Header/Header.scss';
+@import '../views/TopicList/TopicList.scss';
+@import '../views/Article/Article.scss';
