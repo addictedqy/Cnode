@@ -45,6 +45,7 @@
     }
     .topic__title {
       margin: 5px 0;
+      color: #999;
     }
   }
   .topic__bottom {
@@ -76,5 +77,17 @@
   i {
     font-size: 14px;
     margin: 5px;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .content .topicList__wrapper {
+    background-color: #fff;
+  }
+  .content .topic__warpper {
+    box-shadow: 0 1px 2px #999;
+  }
+  .content .pagination__warpper {
+    background-color: #fff;
   }
 }

@@ -7,8 +7,10 @@
     z-index: 1000;
     transition: all .75s;
     position: fixed;
-    display: none;
     z-index: 999;
+    background-color: #fff;
+    box-shadow: 0 0 15px rgba(0,0,0,.2);
+    display: none;
   }
   .sidebar__close {
     background-color: #354851;

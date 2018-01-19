@@ -5,12 +5,11 @@ import { Provider } from 'react-redux';
 import { HashRouter, Switch, Route, Redirect } from 'react-router-dom';
 
 // views
-import Home from './components/Home/Home.jsx';
-import Content from './components/Content/Content.jsx';
+import Home from './views/Home/Home.jsx';
+import Content from './views/Content/Content.jsx';
 
 // 管理数据流 store
-import store from './redux/configStore';
-
+import store from './redux/configStore.js'
 // 总容器
 const root = document.getElementById('root');
 
@@ -23,7 +22,7 @@ class App extends React.Component {
       <HashRouter>
         <Switch>
           <Route exact path="/" component={Home} />
-          <Route path="/content" component={Content} />
+          <Route path="/content/:id" component={Content} />
           <Redirect to="/404" />
         </Switch>
       </HashRouter>
