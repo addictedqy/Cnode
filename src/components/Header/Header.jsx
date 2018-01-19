@@ -13,11 +13,13 @@ import { fetchTopicList } from '../TopicList/TopicListReducer.js';
 const logo = require('./images/logo.svg');
 
 class Header extends React.Component {
+  // 开启侧边栏
   handleSidebarOpen(e) {
     this.props.handleClickOpen()
     e.stopPropagation();
   }
 
+  // 关闭侧边栏
   handleSidebarClose(e) {
     this.props.handleClickClose()
     e.stopPropagation();
@@ -28,7 +30,7 @@ class Header extends React.Component {
     return (
       <div className="header">
       {/*移动端侧边栏*/}
-        <nav className={this.props.open ? "sidebar__wrapper" : ""}>
+        <nav className={this.props.isShowSideBar ? "sidebar__wrapper" : ""}>
           <div className="sidebar__close">
             <span onClick={(e) => this.handleSidebarClose(e)}>X</span>
           </div>
@@ -63,7 +65,7 @@ class Header extends React.Component {
 }
 
 export default connect(
-  (state) => ({open: state.isShowSideBar}),
+  (state) => ({isShowSideBar: state.isShowSideBar}),
   dispatch => ({
     handleClickOpen: bindActionCreators(sidebarOpen, dispatch),
     handleClickClose: bindActionCreators(sidebarClose, dispatch),
