@@ -1,6 +1,7 @@
 // 发送异步 action
 const FETCHING_TOPIC_LIST = 'FETCHING_TOPIC_LIST';
 const FETCHING_TOPIC_LIST_SUCCESS = 'FETCHING_TOPIC_LIST_SUCCESS';
+const UPDATE_TABS = 'UPDATE_TABS';
 
 export const fetchTopicList = (params) => (dispatch) => {
   dispatch({
@@ -14,13 +15,21 @@ export const fetchTopicList = (params) => (dispatch) => {
           type: FETCHING_TOPIC_LIST_SUCCESS,
           payload: data,
         })
-      })
+      });
+}
+
+export const updateTabs = (tabs = '') => {
+  return {
+    type: UPDATE_TABS,
+    payload: tabs,
+  }
 }
 
 // 渲染主题列表逻辑
 const topicListState = {
   list: [],
   fetchState: 'SUCCESS',
+  tabs: '',
 }
 
 export const topicListReducer = (state = topicListState, action) => {
@@ -33,6 +42,10 @@ export const topicListReducer = (state = topicListState, action) => {
       return Object.assign({}, state, {
         list: action.payload.data,
         fetchState: 'SUCCESS',
+      })
+    case UPDATE_TABS: 
+      return Object.assign({}, state, {
+        tabs: action.payload
       })
   }
   return state;

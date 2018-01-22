@@ -3,7 +3,7 @@
   max-width: 1024px;
   margin: 0 auto;
   .topicList__wrapper {
-    padding: 20px 10px 0 10px;
+    padding: 10px 0;
     background-color: #354851;
   }
   .topic__warpper {
@@ -13,6 +13,7 @@
     border-radius: 2px;
     margin-bottom: 10px;
   }
+  .topicList__wrapper
   .topic__warpper:last-child {
     margin-bottom: 0;
   }

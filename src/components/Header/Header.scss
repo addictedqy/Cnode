@@ -10,7 +10,15 @@
     z-index: 999;
     background-color: #fff;
     box-shadow: 0 0 15px rgba(0,0,0,.2);
-    display: none;
+    transform: translate(-110%);
+    transition: all 0.75s cubic-bezier(0.23,1.32,1);
+    overflow-x: hidden;
+    overflow-y: auto;
+  }
+  .sidebar__wrapper-open {
+    display: block;
+    transform: translate(0);
+    transition: all .75s;
   }
   .sidebar__close {
     background-color: #354851;
@@ -41,11 +49,10 @@
       display: block;
       width: 100%;
       text-decoration: none;
-      color: 2b3a42;
+      color: black;
     }
   }
 }
-
 // 移动端 header 样式
 header {
   .navigation__wrapper {
@@ -102,6 +109,7 @@ header {
     .navigation__header .navigation__item {
       display: flex;
       justify-content: flex-end;
+      transform: translate(20px);
     }
     .navigation__item a {
       padding: 16px 20px;

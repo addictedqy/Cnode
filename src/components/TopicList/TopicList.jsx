@@ -18,7 +18,7 @@ class TopicList extends React.Component {
     const { search } = this.props;
     const currentSearch = this.props.search;
     const nextSearch = nextProps.search;
-    if (currentSearch !== nextProps) {
+    if (currentSearch !== nextSearch) {
       this.props.fetchTopicList(this.renderPage());
     }
   }
@@ -45,7 +45,7 @@ class TopicList extends React.Component {
       return <span className="topic__label">顶</span>
     }
   }
-  
+
   renderTopicList(list) {
     return list.map((item, i) => {
       return (

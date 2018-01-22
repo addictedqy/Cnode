@@ -6,8 +6,8 @@ class Content extends React.Component {
   render() {
     return (
       <div data-reactroot>
-        <Header search={this.props.location.search}/>
-        <Article id={this.props.match.params.id} />
+        <Header search={this.props.location.search} />
+        <Article id={this.props.match.params.id}/>
       </div>
     )
   }

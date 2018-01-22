@@ -25,7 +25,7 @@ var privateTimeFlies = function() {
       case delta >= YEAD_MILLI:
         return `${Math.floor(delta / YEAD_MILLI)} 年前`;
       default:
-        return NaN;
+        return '';
     }
   };
 };
