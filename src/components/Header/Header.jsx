@@ -42,7 +42,6 @@ class Header extends React.Component {
             <Link onClick={(e) => this.handleSidebarClose(e)} className={this.props.search === '?page=1tab=job' ? "sidebar__item--active" : ""} to={'/?page=1&tab=job'}>招聘</Link>
           </div>
         </nav>
-
         {/*PC端样式*/}
         <header>
           <div className="navigation__wrapper">
