@@ -9,6 +9,7 @@ import { sidebarOpen, sidebarClose } from './HeaderReducer.js';
 
 // 标签分页
 import { fetchTopicList } from '../TopicList/TopicListReducer.js';
+
 // logo图片
 const logo = require('./images/logo.svg');
 
@@ -24,7 +25,7 @@ class Header extends React.Component {
     this.props.handleClickClose()
     e.stopPropagation();
   }
-  
+
   render() {
     return (
       <div className="header">
