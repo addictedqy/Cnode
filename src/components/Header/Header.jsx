@@ -35,10 +35,10 @@ class Header extends React.Component {
           </div>
           <div className="nav__warpper">
             <Link onClick={(e) => this.handleSidebarClose(e)} className={this.props.search === '?page=1&tab=all' ? "sidebar__item--active" : ""} to={'/?page=1&tab=all'}>全部</Link>
-            <Link onClick={(e) => this.handleSidebarClose(e)} className={this.props.search === '?page=1&tab=good' ? "sidebar__item--active" : ""} to={'/?page=1&tab=good'}>精华</Link>
-            <Link onClick={(e) => this.handleSidebarClose(e)} className={this.props.search === '?page=1&tab=share' ? "sidebar__item--active" : ""} to={'/?page=1&tab=share'}>分享</Link>
-            <Link onClick={(e) => this.handleSidebarClose(e)} className={this.props.search === '?page=1&tab=ask' ? "sidebar__item--active" : ""} to={'/?page=1&tab=ask'}>问答</Link>
-            <Link onClick={(e) => this.handleSidebarClose(e)} className={this.props.search === '?page=1&tab=job' ? "sidebar__item--active" : ""} to={'/?page=1&tab=job'}>招聘</Link>
+            <Link onClick={(e) => this.handleSidebarClose(e)} className={this.props.search === '?page=1tab=good' ? "sidebar__item--active" : ""} to={'/?page=1&tab=good'}>精华</Link>
+            <Link onClick={(e) => this.handleSidebarClose(e)} className={this.props.search === '?page=1tab=share' ? "sidebar__item--active" : ""} to={'/?page=1&tab=share'}>分享</Link>
+            <Link onClick={(e) => this.handleSidebarClose(e)} className={this.props.search === '?page=1tab=ask' ? "sidebar__item--active" : ""} to={'/?page=1&tab=ask'}>问答</Link>
+            <Link onClick={(e) => this.handleSidebarClose(e)} className={this.props.search === '?page=1tab=job' ? "sidebar__item--active" : ""} to={'/?page=1&tab=job'}>招聘</Link>
           </div>
         </nav>
 
