@@ -9,6 +9,10 @@
 5. redux
 6. redux-thunk
 
+##React/JSX 规范
+<br />[airbnb 的 React/JSX 编码规范](https://github.com/airbnb/javascript/tree/master/react)
+
+
 ## 脚本
 启动开发服务器 `npm run dev`
 <br /> 如果是 `windows` 系统，则需要重新安装 `node-sass`
