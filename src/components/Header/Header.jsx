@@ -24,7 +24,7 @@ class Header extends React.Component {
     this.props.handleClickClose()
     e.stopPropagation();
   }
-
+  
   render() {
     return (
       <div className="header">
