@@ -17,4 +17,4 @@
 6. redux-thunk
 
 ## 脚本
-启动开发服务器 'npm run dev'
+启动开发服务器 `npm run dev`
