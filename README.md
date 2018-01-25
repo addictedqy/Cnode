@@ -9,7 +9,7 @@
 5. redux
 6. redux-thunk
 
-##React/JSX 规范
+## React/JSX 规范
 <br />[airbnb 的 React/JSX 编码规范](https://github.com/airbnb/javascript/tree/master/react)
 
 
