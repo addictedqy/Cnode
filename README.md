@@ -18,3 +18,4 @@
 
 ## 脚本
 启动开发服务器 `npm run dev`
+如果是 `windows` 系统，则需要重新安装 `node-sass`
