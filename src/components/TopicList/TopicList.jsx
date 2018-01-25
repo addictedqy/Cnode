@@ -27,6 +27,8 @@ class TopicList extends React.Component {
   renderPage() {
     const { search } = this.props;
     const obj = querystring.parse(this.props.search.slice(1))
+    console.log(obj)
+    console.log(this.props.search)
     let result = {
       page: 1,
       tab: 'all',
