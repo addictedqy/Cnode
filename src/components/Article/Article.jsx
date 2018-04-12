@@ -42,6 +42,7 @@ class Article extends React.Component {
   }
 
   render() {
+    console.log(this.props)
     const articleList = this.props.articleList;
     return (
       <div className="article__container container">

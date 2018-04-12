@@ -11,25 +11,25 @@ import { fetchTopicList } from './TopicListReducer.js';
 import timeFlies from '../../utils/dateformat.js';
 
 class TopicList extends React.Component {
+  // 挂载到页面执行
   componentDidMount() {
     this.props.fetchTopicList(this.renderPage());
   }
 
+  // props 改变时执行
   componentWillReceiveProps(nextProps) {
     const { search } = this.props;
     const currentSearch = this.props.search;
     const nextSearch = nextProps.search;
     if (currentSearch !== nextSearch) {
-      this.props.fetchTopicList(this.renderPage());
+      this.props.fetchTopicList(querystring.parse(nextSearch.slice(1)));
     }
   }
-  // 从querystring 获取相关信息，并解析。
+  // 从 querystring 获取相关信息，并解析。
   // 获取页面数跟标签信息
   renderPage() {
     const { search } = this.props;
     const obj = querystring.parse(this.props.search.slice(1))
-    console.log(obj)
-    console.log(this.props.search)
     let result = {
       page: 1,
       tab: 'all',
@@ -81,6 +81,7 @@ class TopicList extends React.Component {
   }
 
   render() {
+    console.log(this.props)
     const paginationInfo = this.renderPage();
     // 得到上一页页码
     const prev = paginationInfo.page === 1 ? 1 : paginationInfo.page - 1;

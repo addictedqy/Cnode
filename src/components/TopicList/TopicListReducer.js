@@ -29,7 +29,6 @@ export const updateTabs = (tabs = '') => {
 const topicListState = {
   list: [],
   fetchState: 'SUCCESS',
-  tabs: '',
 }
 
 export const topicListReducer = (state = topicListState, action) => {
