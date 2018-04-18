@@ -23,8 +23,7 @@ class TopicList extends React.Component {
     const nextSearch = nextProps.search;
     if (currentSearch !== nextSearch) {
       this.props.fetchTopicList(querystring.parse(nextSearch.slice(1)));
-    }
-  }
+    }  }
   // 从 querystring 获取相关信息，并解析。
   // 获取页面数跟标签信息
   renderPage() {
@@ -34,6 +33,7 @@ class TopicList extends React.Component {
       page: 1,
       tab: 'all',
     }
+    
     if (obj.page !== undefined) {
       result.page = parseInt(obj.page);
     }
@@ -81,7 +81,7 @@ class TopicList extends React.Component {
   }
 
   render() {
-    console.log(this.props)
+    // console.log(this.props)
     const paginationInfo = this.renderPage();
     // 得到上一页页码
     const prev = paginationInfo.page === 1 ? 1 : paginationInfo.page - 1;

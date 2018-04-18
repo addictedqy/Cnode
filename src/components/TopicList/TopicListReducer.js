@@ -8,14 +8,30 @@ export const fetchTopicList = (params) => (dispatch) => {
     type: FETCHING_TOPIC_LIST,
   })
 
-  fetch('https://cnodejs.org/api/v1/topics?page=' + params.page + '&tab=' + params.tab)
-    .then(response => response.json())
-      .then(data => {
-        dispatch({
-          type: FETCHING_TOPIC_LIST_SUCCESS,
-          payload: data,
-        })
-      });
+  // fetch('https://cnodejs.org/api/v1/topics?page=' + params.page + '&tab=' + params.tab)
+  //   .then(response => response.json())
+  //     .then(data => {
+  //       dispatch({
+  //         type: FETCHING_TOPIC_LIST_SUCCESS,
+  //         payload: data,
+  //       })
+  //     });
+
+  async function topicFetch(url) {
+    try {
+      const response = await fetch(url);
+      const data = await response.json();
+      // console.log(data)
+      dispatch({
+        type: FETCHING_TOPIC_LIST_SUCCESS,
+        payload: data,
+      })
+    }
+    catch (err) {
+      console.log('fetch failed', err);
+    }
+  }
+  topicFetch('https://cnodejs.org/api/v1/topics?page=' + params.page + '&tab=' + params.tab)
 }
 
 export const updateTabs = (tabs = '') => {
