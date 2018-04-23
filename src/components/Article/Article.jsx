@@ -7,6 +7,8 @@ const userAvatar = require('../Header/images/user_avater.png');
 
 // 渲染主题详情
 import { fetchArticleList } from './ArticleReducer.js';
+//加载图
+import Loading from '../Loading/Loading.jsx';
 
 // 计算时间公式
 import timeFlies from '../../utils/dateformat.js';
@@ -42,9 +44,13 @@ class Article extends React.Component {
   }
 
   render() {
+    const { loading } = this.props;
     const articleList = this.props.articleList;
-    return (
-      <div className="article__container container">
+    if (loading === 'LOADING') {
+      return <Loading />
+    } else {
+      return (
+        <div className="article__container container">
         <div className="article__header">
           <div className="article__avatar">
             <img src={articleList.author.avatar_url} alt=""/>
@@ -78,13 +84,15 @@ class Article extends React.Component {
             {this.renderReplyMsg(articleList.replies)}
         </div>
       </div>
-    )
+      )
+    }
   }
 }
 
 export default connect(
   state => ({
     articleList: state.articleList.title,
+    loading: state.articleList.fetchState,
   }),
   dispatch => ({
     fetchArticleList: bindActionCreators(fetchArticleList, dispatch),
