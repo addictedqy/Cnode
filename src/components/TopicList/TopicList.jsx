@@ -4,6 +4,8 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import querystring from 'querystring';
 
+// 加载图
+import Loading from '../Loading/Loading.jsx';
 // 渲染网页
 import { fetchTopicList } from './TopicListReducer.js';
 
@@ -81,7 +83,7 @@ class TopicList extends React.Component {
   }
 
   render() {
-    // console.log(this.props)
+    const { loading } = this.props;
     const paginationInfo = this.renderPage();
     // 得到上一页页码
     const prev = paginationInfo.page === 1 ? 1 : paginationInfo.page - 1;
@@ -90,14 +92,18 @@ class TopicList extends React.Component {
     return (
       <div className="content container">
         <div className="topicList__wrapper">
-          {this.renderTopicList(this.props.topicList)}
-          <div className="pagination__warpper">
-            <ul>
-              <li><Link to={'/?page=' + prev + '&tab=' + paginationInfo.tab}><i className="iconfont icon-left"></i>上一页</Link></li>
-              <li><span>{paginationInfo.page}</span></li>
-              <li><Link to={'/?page=' + next + '&tab=' + paginationInfo.tab}>下一页<i className="iconfont icon-rigth"></i></Link></li>
-            </ul>
-          </div>
+          {loading === 'LOADING' ? <Loading/ > : this.renderTopicList(this.props.topicList)}
+          { loading === 'LOADING' ? 
+            null
+            :
+            <div className="pagination__warpper">
+              <ul>
+                <li><Link to={'/?page=' + prev + '&tab=' + paginationInfo.tab}><i className="iconfont icon-left"></i>上一页</Link></li>
+                <li><span>{paginationInfo.page}</span></li>
+                <li><Link to={'/?page=' + next + '&tab=' + paginationInfo.tab}>下一页<i className="iconfont icon-rigth"></i></Link></li>
+              </ul>
+            </div>
+          }
         </div>
       </div>
     )
@@ -107,6 +113,7 @@ class TopicList extends React.Component {
 export default connect(
   state => ({
     topicList: state.topicList.list,
+    loading: state.topicList.fetchState,
   }),
   dispatch => ({
     fetchTopicList: bindActionCreators(fetchTopicList, dispatch),

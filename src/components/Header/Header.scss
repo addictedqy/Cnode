@@ -37,21 +37,21 @@
       padding: 5px;
     }
   }
-  .nav__warpper {
-    padding-top: 20px;
-    .sidebar__item--active {
-      color: #2086d7;
-    }
-    a {
-      padding: 10px 0;
-      line-height: 2em;
-      border-bottom: 1px solid #dedede;
-      display: block;
-      width: 100%;
-      text-decoration: none;
-      color: black;
-    }
-  }
+}
+.nav__warpper {
+  padding-top: 20px;
+}
+.nav__warpper a {
+  padding: 10px 0;
+  line-height: 2em;
+  border-bottom: 1px solid #dedede;
+  display: block;
+  width: 100%;
+  text-decoration: none;
+  color: black;
+}
+.nav__warpper>.sidebar__item--active {
+  color: #2086d7;
 }
 // 移动端 header 样式
 header {

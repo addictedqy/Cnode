@@ -66,7 +66,7 @@ class Header extends React.Component {
 export default connect(
   (state) => ({
     isShowSideBar: state.isShowSideBar,
-    tabs: state.topicList.tabs,
+    loading: state.topicList.fetchState,
   }),
   dispatch => ({
     handleClickOpen: bindActionCreators(sidebarOpen, dispatch),

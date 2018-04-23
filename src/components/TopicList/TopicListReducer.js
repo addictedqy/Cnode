@@ -21,7 +21,6 @@ export const fetchTopicList = (params) => (dispatch) => {
     try {
       const response = await fetch(url);
       const data = await response.json();
-      // console.log(data)
       dispatch({
         type: FETCHING_TOPIC_LIST_SUCCESS,
         payload: data,
@@ -33,14 +32,6 @@ export const fetchTopicList = (params) => (dispatch) => {
   }
   topicFetch('https://cnodejs.org/api/v1/topics?page=' + params.page + '&tab=' + params.tab)
 }
-
-export const updateTabs = (tabs = '') => {
-  return {
-    type: UPDATE_TABS,
-    payload: tabs,
-  }
-}
-
 // 渲染主题列表逻辑
 const topicListState = {
   list: [],
@@ -57,10 +48,6 @@ export const topicListReducer = (state = topicListState, action) => {
       return Object.assign({}, state, {
         list: action.payload.data,
         fetchState: 'SUCCESS',
-      })
-    case UPDATE_TABS: 
-      return Object.assign({}, state, {
-        tabs: action.payload
       })
   }
   return state;
